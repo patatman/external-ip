@@ -16,7 +16,7 @@ then
   curl https://api.pushbullet.com/v2/pushes \
   -u $pushapi: \
   -d type="note" \
-  -d title="Extern ip thuis gewijzigd" \
+  -d title="External ip modified" \
   -d body=$externip \
   -X POST
   echo "$externip" > $ipfile
