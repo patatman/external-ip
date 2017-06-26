@@ -3,6 +3,7 @@
 #configuration variables
 externip=$(/bin/curl icanhazip.com)
 ipfile=/var/externip
+oldip=$(cat $ipfile)
 pushapi=your pushbullet api
 
 
@@ -17,7 +18,7 @@ then
   -u $pushapi: \
   -d type="note" \
   -d title="External ip modified" \
-  -d body=$externip \
+  -d body="Old ip: $oldip, new ip: $externip" \
   -X POST
   echo "$externip" > $ipfile
 fi
