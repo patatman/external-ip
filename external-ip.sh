@@ -2,15 +2,18 @@
 
 # Configuration variables
 # A api can be found over at https://pushbullet.com
+
 externip=$(/bin/curl icanhazip.com)
 ipfile=/var/externip
 oldip=$(cat $ipfile)
 pushapi=your pushbullet api
 
+# do the check if your ip is changed
 touch $ipfile
 cat $ipfile > fileip
 echo "$externip" > currentip
 
+#If so, exectute below code.
 DIFF=$(diff fileip currentip)
 if [ "$DIFF" != "" ]
 then
