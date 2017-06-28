@@ -13,7 +13,7 @@ touch $ipfile
 cat $ipfile > fileip
 echo "$externip" > currentip
 
-#If so, exectute below code.
+# if so, exectute below code.
 DIFF=$(diff fileip currentip)
 if [ "$DIFF" != "" ]
 then
