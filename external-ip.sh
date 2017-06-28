@@ -8,7 +8,7 @@ ipfile=/var/externip
 oldip=$(cat $ipfile)
 pushapi=your pushbullet api
 
-# do the check if your ip is changed
+# check if your ip is changed
 touch $ipfile
 cat $ipfile > fileip
 echo "$externip" > currentip
